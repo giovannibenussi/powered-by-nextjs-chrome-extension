@@ -1,0 +1,30 @@
+{
+  "name": "Powered by Next.js",
+  "description": "Discover if the current website is built with Next.js",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_icon": {
+      "16": "/images/nextjs-disabled.png",
+      "32": "/images/nextjs-disabled.png",
+      "48": "/images/nextjs-disabled.png",
+      "128": "/images/nextjs-disabled.png"
+    }
+  },
+  "icons": {
+    "16": "/images/nextjs.png",
+    "32": "/images/nextjs.png",
+    "48": "/images/nextjs.png",
+    "128": "/images/nextjs.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
